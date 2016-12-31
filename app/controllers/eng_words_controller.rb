@@ -1,8 +1,5 @@
 class EngWordsController < ApplicationController
   def create
-    p "*" * 200
-    p eng_word_params
-    p "*" * 200
     @eng_word = EngWord.new({:word => eng_word_params[:word]})
     if @eng_word.save
       @eng_words_translation = EngWordTranslation.new
@@ -20,6 +17,10 @@ class EngWordsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+
   end
 
   def new
