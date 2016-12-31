@@ -9,7 +9,6 @@ class EngWordsController < ApplicationController
       @eng_words_translation[:sentence_translation] = eng_word_params[:eng_word_translation][:sentence_translation]
       @eng_words_translation[:eng_word_id] = @eng_word.id;
       if @eng_words_translation.save
-        p @eng_words_translation
         redirect_to @eng_word, notice: 'Word was successfully created.'
       else
         render :new
