@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>New Word</h1>
+  </div>
+  <div class="panel-body">
+    <%= form_for @eng_word do | form | %>
+      <div class="form-group">
+        <%= form.label :word %>
+        <%= form.text_field :word, class: "form-control" %>
+      </div>
+      <%= form.fields_for :eng_word_translation do | translation_form | %>
+        <div class="form-group">
+          <%= translation_form.label :definition %>
+          <%= translation_form.text_field :definition, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= translation_form.label :type %>
+          <%= translation_form.select :type, options_for_select([["Select One", ""], "adj", "noun", "verb"]) , class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= translation_form.label :sample_sentence %>
+          <%= translation_form.text_area :sample_sentence, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= translation_form.label :sentence_translation %>
+          <%= translation_form.text_area :sentence_translation, class: "form-control" %>
+        </div>
+      <% end %>
+      <%= form.submit 'Save' %>
+    <% end %>
+  </div>
+  <div class="panel-footer">
+  </div>
+</div>
