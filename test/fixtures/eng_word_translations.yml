@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  definition: MyString
+  type: 
+  sample_sentence: MyText
+  sentence_translation: MyText
+  eng_word: one
+
+two:
+  definition: MyString
+  type: 
+  sample_sentence: MyText
+  sentence_translation: MyText
+  eng_word: two
