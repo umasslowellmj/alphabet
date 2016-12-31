@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231043404) do
+ActiveRecord::Schema.define(version: 20161231083932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "eng_word_translations", force: :cascade do |t|
     t.string   "definition"
-    t.string   "type"
+    t.string   "word_type"
     t.text     "sample_sentence"
     t.text     "sentence_translation"
     t.integer  "eng_word_id"

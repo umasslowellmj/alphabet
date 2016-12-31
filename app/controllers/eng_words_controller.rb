@@ -4,7 +4,7 @@ class EngWordsController < ApplicationController
     if @eng_word.save
       @eng_words_translation = EngWordTranslation.new
       @eng_words_translation[:definition] = eng_word_params[:eng_word_translation][:definition]
-      @eng_words_translation[:type] = eng_word_params[:eng_word_translation][:definition]
+      @eng_words_translation[:word_type] = eng_word_params[:eng_word_translation][:word_type]
       @eng_words_translation[:sample_sentence] = eng_word_params[:eng_word_translation][:sample_sentence]
       @eng_words_translation[:sentence_translation] = eng_word_params[:eng_word_translation][:sentence_translation]
       @eng_words_translation[:eng_word_id] = @eng_word.id;

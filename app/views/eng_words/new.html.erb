@@ -14,8 +14,8 @@
           <%= translation_form.text_field :definition, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= translation_form.label :type %>
-          <%= translation_form.select :type, options_for_select([["Select One", ""], "adj", "noun", "verb"]) , class: "form-control"%>
+          <%= translation_form.label :word_type %>
+          <%= translation_form.select :word_type, options_for_select([["Select One", ""], "adj", "noun", "verb"]) , class: "form-control"%>
         </div>
         <div class="form-group">
           <%= translation_form.label :sample_sentence %>
