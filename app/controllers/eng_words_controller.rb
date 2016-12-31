@@ -29,7 +29,7 @@ class EngWordsController < ApplicationController
   private
 
   def eng_word_params
-    params.require(:eng_word).permit(:word, eng_word_translation:[:definition, :type, :sample_sentence, :sentence_translation])
+    params.require(:eng_word).permit(:word, eng_word_translation:[:definition, :word_type, :sample_sentence, :sentence_translation])
   end
 
 end
