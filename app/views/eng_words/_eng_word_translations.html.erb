@@ -1,0 +1,10 @@
+<p>
+  <%= f.label :definition %><br />
+  <%= f.text_field :definition %><br />
+  <%= f.label :word_type %><br />
+  <%= f.select :word_type, [ 'adj', 'adv', 'noun', 'verb', 'pronoun' ], :prompt => 'Select One' %><br />
+  <%= f.label :sample_sentence %><br />
+  <%= f.text_area :sample_sentence, :rows => 3 %><br />
+  <%= f.label :sentence_translation %><br />
+  <%= f.text_area :sentence_translation, :rows => 3 %><br />
+</p>

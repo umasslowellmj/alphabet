@@ -1,3 +1,3 @@
 class EngWordTranslation < ApplicationRecord
-  belongs_to :eng_word
+  belongs_to :eng_word, optional: true
 end
