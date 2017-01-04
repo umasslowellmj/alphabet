@@ -33,7 +33,7 @@ gem 'bootstrap-sass'
 # gem 'capistrano-rails', group: :development
 
 gem 'react-rails'
-
+gem "cocoon"
 gem 'devise'
 
 group :development, :test do

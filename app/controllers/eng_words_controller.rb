@@ -20,7 +20,7 @@ class EngWordsController < ApplicationController
 
   def create
     @eng_word = EngWord.new(eng_word_params)
-
+    p eng_word_params
     respond_to do |format|
       if @eng_word.save
         format.html { redirect_to @eng_word, notice: 'Eng word was successfully created.' }
@@ -60,6 +60,6 @@ class EngWordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def eng_word_params
-      params.fetch(:eng_word, {})
+      params.fetch(:eng_word, {}).permit(:word)
     end
 end
