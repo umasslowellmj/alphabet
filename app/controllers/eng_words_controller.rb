@@ -1,8 +1,6 @@
 class EngWordsController < ApplicationController
   before_action :set_eng_word, only: [:show, :edit, :update, :destroy]
 
-  # GET /eng_words
-  # GET /eng_words.json
   def index
     @eng_words = EngWord.all
   end
@@ -17,12 +15,9 @@ class EngWordsController < ApplicationController
     @eng_word = EngWord.new
   end
 
-  # GET /eng_words/1/edit
   def edit
   end
 
-  # POST /eng_words
-  # POST /eng_words.json
   def create
     @eng_word = EngWord.new(eng_word_params)
 
@@ -37,8 +32,6 @@ class EngWordsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /eng_words/1
-  # PATCH/PUT /eng_words/1.json
   def update
     respond_to do |format|
       if @eng_word.update(eng_word_params)
@@ -51,8 +44,6 @@ class EngWordsController < ApplicationController
     end
   end
 
-  # DELETE /eng_words/1
-  # DELETE /eng_words/1.json
   def destroy
     @eng_word.destroy
     respond_to do |format|
