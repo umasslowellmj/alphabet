@@ -1,0 +1,1 @@
+json.array! @eng_words, partial: 'eng_words/eng_word', as: :eng_word

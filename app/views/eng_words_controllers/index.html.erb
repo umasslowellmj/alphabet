@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Eng Words Controllers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eng_words_controllers.each do |eng_words_controller| %>
+      <tr>
+        <td><%= link_to 'Show', eng_words_controller %></td>
+        <td><%= link_to 'Edit', edit_eng_words_controller_path(eng_words_controller) %></td>
+        <td><%= link_to 'Destroy', eng_words_controller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eng Words Controller', new_eng_words_controller_path %>

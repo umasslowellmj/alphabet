@@ -1,0 +1,1 @@
+json.partial! "eng_words/eng_word", eng_word: @eng_word
