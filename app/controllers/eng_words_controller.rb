@@ -5,12 +5,9 @@ class EngWordsController < ApplicationController
     @eng_words = EngWord.all
   end
 
-  # GET /eng_words/1
-  # GET /eng_words/1.json
   def show
   end
 
-  # GET /eng_words/new
   def new
     @eng_word = EngWord.new
     @eng_word.eng_word_translations.build
@@ -59,12 +56,11 @@ class EngWordsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_eng_word
       @eng_word = EngWord.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def eng_word_params
       params.fetch(:eng_word, {}).permit(:word, eng_word_translations_attributes: [:id, :definition, :word_type, :sample_sentence, :sentence_translation, :eng_word_id])
     end
