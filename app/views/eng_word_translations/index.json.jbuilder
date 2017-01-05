@@ -1,1 +1,0 @@
-json.array! @eng_word_translations, partial: 'eng_word_translations/eng_word_translation', as: :eng_word_translation

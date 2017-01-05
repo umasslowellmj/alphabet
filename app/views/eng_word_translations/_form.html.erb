@@ -1,17 +1,23 @@
-<%= form_for(eng_word_translation) do |f| %>
-  <% if eng_word_translation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(eng_word_translation.errors.count, "error") %> prohibited this eng_word_translation from being saved:</h2>
-
-      <ul>
-      <% eng_word_translation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1>Word</h1>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
   </div>
-<% end %>
+  <div class="panel-body">
+    <%= form_for @eng_word do |f| %>
+      <div class="form-group">
+        <%= f.label :word %>
+        <%= f.text_field :word, class: "form-control"%>
+      </div>
+      <%= f.fields_for :eng_word_translations do |builder| %>
+        <%= render "eng_word_translations", :f => builder %>
+      <% end %>
+      <div class="form-group">
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="panel-footer">
+  </div>
+</div>

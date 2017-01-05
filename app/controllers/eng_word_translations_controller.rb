@@ -14,7 +14,7 @@ class EngWordTranslationsController < ApplicationController
   end
 
   def edit
-    @eng_word = EngWord.find(params[:eng_word_id])
+    @eng_word = @eng_word_translation.eng_word
   end
 
   def create

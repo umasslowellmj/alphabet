@@ -9,6 +9,7 @@
         <th>Sample Sentence</th>
         <th>Sentence Translation</th>
         <th>Translated By</th>
+        <th>Controls</th>
       </tr>
     </thead>
     <tbody>
@@ -20,9 +21,9 @@
           <td><%= eng_word_translation.sample_sentence %></td>
           <td><%= eng_word_translation.sentence_translation %></td>
           <td><%= eng_word_translation.user_id %></td>
+          <td><%= link_to 'Edit', edit_eng_word_translation_path(eng_word_translation) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-<%= link_to 'New Eng Word Translation', new_eng_word_translation_path %>
