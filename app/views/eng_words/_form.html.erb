@@ -1,10 +1,23 @@
-<%= form_for @eng_word do |f| %>
-  <p>
-    <%= f.label :word %><br />
-    <%= f.text_field :word %>
-  </p>
-  <%= f.fields_for :eng_word_translations do |builder| %>
-    <%= render "eng_word_translations", :f => builder %>
-  <% end %>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1>Word</h1>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= form_for @eng_word do |f| %>
+      <div class="form-group">
+        <%= f.label :word %>
+        <%= f.text_field :word, class: "form-control"%>
+      </div>
+      <%= f.fields_for :eng_word_translations do |builder| %>
+        <%= render "eng_word_translations", :f => builder %>
+      <% end %>
+      <div class="form-group">
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="panel-footer">
+  </div>
+</div>
