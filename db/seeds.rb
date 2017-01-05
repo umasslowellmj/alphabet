@@ -23,8 +23,8 @@ EngWord.create([
 ])
 
 EngWordTranslation.create([
-    {definition: "ус", word_type: "нэр", sample_sentence: "Everyone should drink at least seven glasses of water a day", sentence_translation: "Хүн бүр өдөрт дор хаяж долоон стакан ус уух хэрэгтэй.", eng_word_id: 6, user_id: 1},
-    {definition: "нисэх", word_type: "үйл", sample_sentence: "I wish I could fly.", sentence_translation: "Би нисдэг байсан ч болоосой.", eng_word_id: 5, user_id: 4},
+    {definition: "ус", word_type: "нэр", sample_sentence: "Everyone should drink at least seven glasses of water a day", sentence_translation: "Хүн бүр өдөрт дор хаяж долоон стакан ус уух хэрэгтэй.", eng_word_id: 5, user_id: 1},
+    {definition: "нисэх", word_type: "үйл", sample_sentence: "I wish I could fly.", sentence_translation: "Би нисдэг байсан ч болоосой.", eng_word_id: 4, user_id: 4},
     {definition: "сэлэх", word_type: "үйл", sample_sentence: "My friend doesn't swim.", sentence_translation: "Миний найз сэлдэггүй.", eng_word_id: 3, user_id: 3},
     {definition: "хоол", word_type: "нэр", sample_sentence: "Ulzii doesn't share food", sentence_translation: "Өлзий хоолоо хуваалцдаггүй.", eng_word_id: 2, user_id: 2},
     {definition: "алим", word_type: "нэр", sample_sentence: "An apple a day keeps the doctor away", sentence_translation: "Өдөрт нэг алим эмч нараас хол байна.", eng_word_id: 1, user_id: 3}
