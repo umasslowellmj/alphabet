@@ -1,1 +1,0 @@
-json.array! @eng_words_controllers, partial: 'eng_words_controllers/eng_words_controller', as: :eng_words_controller
