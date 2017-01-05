@@ -1,4 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_eng_word_translation_path(@eng_word_translation) %> |
-<%= link_to 'Back', eng_word_translations_path %>
+<div class="table-responsive">
+  <table class="table table-bordered table-condensed ">
+    <thead>
+      <tr>
+        <th>Word</th>
+        <th>Definition</th>
+        <th>Word Type</th>
+        <th>Sample Sentence</th>
+        <th>Sentence Translation</th>
+        <th>Translated By</th>
+        <th>Controls</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @eng_word_translation.eng_word.word %></td>
+          <td><%= @eng_word_translation.definition %></td>
+          <td><%= @eng_word_translation.word_type %></td>
+          <td><%= @eng_word_translation.sample_sentence %></td>
+          <td><%= @eng_word_translation.sentence_translation %></td>
+          <td><%= @eng_word_translation.user_id %></td>
+          <td><%= link_to 'Edit', edit_eng_word_translation_path(@eng_word_translation) %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
