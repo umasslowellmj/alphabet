@@ -13,10 +13,6 @@ class EngWordsController < ApplicationController
     @eng_word.eng_word_translations.build
   end
 
-  def edit
-
-  end
-
   def create
     if EngWord.exists?(word: eng_word_params[:word])
       @eng_word = EngWord.where(word: eng_word_params[:word]).first
@@ -33,22 +29,6 @@ class EngWordsController < ApplicationController
           format.json { render json: @eng_word.errors, status: :unprocessable_entity }
         end
       end
-    end
-  end
-
-  def update
-    if @eng_word.update_attributes(params[:eng_word])
-      redirect_to @eng_word, notice: "Successfully updated survey."
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @eng_word.destroy
-    respond_to do |format|
-      format.html { redirect_to eng_words_url, notice: 'Eng word was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
