@@ -9,15 +9,18 @@ class EngWordTranslationsController < ApplicationController
   end
 
   def new
+    @eng_word = EngWord.find(params[:eng_word_id])
     @eng_word_translation = EngWordTranslation.new
   end
 
   def edit
+    @eng_word = EngWord.find(params[:eng_word_id])
   end
 
   def create
+    @eng_word = EngWord.find(params[:eng_word_id])
     @eng_word_translation = EngWordTranslation.new(eng_word_translation_params)
-
+    @eng_word_translation.eng_word = @eng_word
     respond_to do |format|
       if @eng_word_translation.save
         format.html { redirect_to @eng_word_translation, notice: 'Eng word translation was successfully created.' }

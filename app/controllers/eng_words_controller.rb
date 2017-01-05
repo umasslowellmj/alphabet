@@ -14,6 +14,7 @@ class EngWordsController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -36,14 +37,10 @@ class EngWordsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @eng_word.update(eng_word_params)
-        format.html { redirect_to @eng_word, notice: 'Eng word was successfully updated.' }
-        format.json { render :show, status: :ok, location: @eng_word }
-      else
-        format.html { render :edit }
-        format.json { render json: @eng_word.errors, status: :unprocessable_entity }
-      end
+    if @eng_word.update_attributes(params[:eng_word])
+      redirect_to @eng_word, notice: "Successfully updated survey."
+    else
+      render :edit
     end
   end
 
