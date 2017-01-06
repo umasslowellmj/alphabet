@@ -8,13 +8,10 @@
     </thead>
     <tbody>
       <% @eng_words.each do |eng_word| %>
-        <%= if eng_word.eng_word_translations.count == 0 %>
-          <tr>
-            <td><%= eng_word.word %></td>
-          </tr>
-          <tr>
-          </tr>
-        <% end %>
+        <tr>
+          <td><%= eng_word.word %></td>
+          <td><%= link_to 'Translate', new_eng_word_translations_path(:eng_word_id => eng_word.id) %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>

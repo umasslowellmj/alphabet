@@ -30,6 +30,10 @@
         <%= f.text_area :sentence_translation, :rows => 3, class: "form-control" %>
       </div>
       <div class="form-group">
+        <%= f.hidden_field :eng_word_id, :value => @eng_word_translation.eng_word_id %>
+      </div>
+
+      <div class="form-group">
         <%= f.submit "Submit" %>
       </div>
     <% end %>
