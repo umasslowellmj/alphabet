@@ -2,7 +2,7 @@ class EngWordsController < ApplicationController
   before_action :set_eng_word, only: [:show, :edit, :update, :destroy]
 
   def index
-    @eng_words = EngWord.all
+    @eng_words = EngWord.first(500)
     @translated_words = @eng_words.select { |w| w.eng_word_translations.count != 0}.last(100)
     @untranslated_words = @eng_words.select { |w| w.eng_word_translations.count == 0}.last(100)
   end
