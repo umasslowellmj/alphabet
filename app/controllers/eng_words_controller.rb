@@ -3,6 +3,8 @@ class EngWordsController < ApplicationController
 
   def index
     @eng_words = EngWord.all
+    @translated_words = @eng_words.select { |w| w.eng_word_translations.count != 0}.last(100)
+    @untranslated_words = @eng_words.select { |w| w.eng_word_translations.count == 0}.last(100)
   end
 
   def show
