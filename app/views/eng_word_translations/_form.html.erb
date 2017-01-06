@@ -5,14 +5,30 @@
     </div>
   </div>
   <div class="panel-body">
-    <%= form_for @eng_word do |f| %>
+    <div class="form-group">
+      <label> Word </label>
+      <input class="form-control" type="text" name="" value="<%= @eng_word_translation.eng_word.word %>" disabled>
+    </div>
+    <%= form_for @eng_word_translation do |f| %>
       <div class="form-group">
-        <%= f.label :word %>
-        <%= f.text_field :word, class: "form-control"%>
+        <%= f.label :definition %>
+        <%= f.text_field :definition, class: "form-control"%>
       </div>
-      <%= f.fields_for :eng_word_translations do |builder| %>
-        <%= render "eng_word_translations", :f => builder %>
-      <% end %>
+
+      <div class="form-group">
+        <%= f.label :word_type %>
+        <%= f.select :word_type, [ 'нэр үг', 'тэмдэг нэр', 'үйл үг', 'дайвар үг', 'төлөөний үг' ], {}, {class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :sample_sentence %>
+        <%= f.text_area :sample_sentence, :rows => 3, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :sentence_translation %>
+        <%= f.text_area :sentence_translation, :rows => 3, class: "form-control" %>
+      </div>
       <div class="form-group">
         <%= f.submit "Submit" %>
       </div>

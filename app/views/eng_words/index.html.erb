@@ -8,7 +8,7 @@
     </thead>
     <tbody>
       <% @eng_words.each do |eng_word| %>
-        <% if eng_word.eng_word_translations.count == 0 %>
+        <%= if eng_word.eng_word_translations.count == 0 %>
           <tr>
             <td><%= eng_word.word %></td>
           </tr>

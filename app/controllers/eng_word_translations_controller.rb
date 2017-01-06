@@ -5,10 +5,6 @@ class EngWordTranslationsController < ApplicationController
     @eng_word_translations = EngWordTranslation.all
   end
 
-  def show
-  end
-
-
   def edit
     @eng_word = @eng_word_translation.eng_word
   end
@@ -25,20 +21,12 @@ class EngWordTranslationsController < ApplicationController
     end
   end
 
-  def destroy
-    @eng_word_translation.destroy
-    respond_to do |format|
-      format.html { redirect_to eng_word_translations_url, notice: 'Eng word translation was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     def set_eng_word_translation
       @eng_word_translation = EngWordTranslation.find(params[:id])
     end
 
     def eng_word_translation_params
-      params.fetch(:eng_word_translation, {})
+      params.fetch(:eng_word_translation, {}).permit(:definition, :word_type, :sample_sentence, :sentence_translation, :eng_word_id, :user_id)
     end
 end
