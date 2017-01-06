@@ -6,6 +6,7 @@ class EngWordsController < ApplicationController
   end
 
   def show
+    @eng_word_translations = @eng_word.eng_word_translations
   end
 
   def new
