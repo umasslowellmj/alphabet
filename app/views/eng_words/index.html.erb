@@ -1,22 +1,21 @@
-<h1>Eng Words</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @eng_words.each do |eng_word| %>
+<div class="table-responsive">
+  <table class="table table-bordered table-condensed">
+    <thead>
       <tr>
-        <td><%= eng_word.word %></td>
-        <td><%= link_to 'Show', eng_word %></td>
+        <th>Word</th>
+        <th>Controls</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Eng Word', new_eng_word_path %>
+    </thead>
+    <tbody>
+      <% @eng_words.each do |eng_word| %>
+        <% if eng_word.eng_word_translations.count == 0 %>
+          <tr>
+            <td><%= eng_word.word %></td>
+          </tr>
+          <tr>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
