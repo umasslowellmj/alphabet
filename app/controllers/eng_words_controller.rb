@@ -19,8 +19,18 @@ class EngWordsController < ApplicationController
   def create
     if EngWord.exists?(word: eng_word_params[:word])
       @eng_word = EngWord.where(word: eng_word_params[:word]).first
-      @eng_word_translation = EngWordTranslation.new(eng_word_params[:eng_word_translations][0])
-      @eng_word_translation.save
+      @eng_word_translation = EngWordTranslation.new(eng_word_params[:eng_word_translations_attributes][0])
+      @eng_word_translation.eng_word_id = @eng_word.id
+      @eng_word_translation.user_id = current_user.id
+      respond_to do |format|
+        if @eng_word_translation.save
+          format.html { redirect_to @eng_word_translation, notice: 'English word translation was successfully created.' }
+          format.json { render :show, status: :created, location: @eng_word_translation }
+        else
+          format.html { render :new }
+          format.json { render json: @eng_word.errors, status: :unprocessable_entity }
+        end
+      end
     else
       @eng_word = EngWord.new(eng_word_params)
       respond_to do |format|
@@ -42,6 +52,6 @@ class EngWordsController < ApplicationController
     end
 
     def eng_word_params
-      params.fetch(:eng_word, {}).permit(:word, eng_word_translations_attributes: [:id, :definition, :word_type, :sample_sentence, :sentence_translation, :eng_word_id])
+      params.fetch(:eng_word, {}).permit(:word, eng_word_translations_attributes: [:id, :definition, :word_type, :sample_sentence, :sentence_translation, :eng_word_id, :user_id])
     end
 end
