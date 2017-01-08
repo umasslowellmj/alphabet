@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :eng_words do
-    get '/search', :to => 'eng_words#search', :on => collection
+    # get '/search', :to => 'eng_words#search', :on => collection
   end
 
 

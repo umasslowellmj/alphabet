@@ -19,7 +19,7 @@ class EngWordsController < ApplicationController
   def create
     if EngWord.exists?(word: eng_word_params[:word])
       @eng_word = EngWord.where(word: eng_word_params[:word]).first
-      @eng_word_translation = EngWordTranslation.new(eng_word_params[:eng_word_translations_attributes][0])
+      @eng_word_translation = EngWordTranslation.new(eng_word_params[:eng_word_translations_attributes]['0'])
       @eng_word_translation.eng_word_id = @eng_word.id
       @eng_word_translation.user_id = current_user.id
       respond_to do |format|
