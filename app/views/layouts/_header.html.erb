@@ -9,8 +9,10 @@
       </button>
       <%= link_to "Alphabet MN", root_path, class: "navbar-brand" %>
     </div>
-
     <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li style="width: 500px;margin-top: 5px;"><%= react_component('SearchBar') %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
@@ -30,17 +32,5 @@
         <% end %>
       </ul>
     </div>
-  </div>
-  <div class="container">
-    <div class="row" style="margin-bottom: 15px;">
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-4">
-        <%= react_component('SearchBar') %>
-      </div>
-      <div class="col-sm-4">
-      </div>
-    </div>
-
   </div>
 </nav>
