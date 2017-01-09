@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :eng_words
-
   get '/search/:word', :to => 'eng_words#search'
-
-
   get 'welcome_page/welcome'
   root 'welcome_page#welcome'
 end

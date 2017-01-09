@@ -2,8 +2,10 @@ class EngWordsController < ApplicationController
   before_action :set_eng_word, only: [:show, :edit, :update, :destroy]
 
   def search
-    @eng_words = EngWord.where(:word => params[:eng_word])
-    byebug
+    @eng_words = EngWord.where(:word => params[:word])
+    respond_to do |format|
+      format.html { render :search }
+    end
   end
 
   def index
