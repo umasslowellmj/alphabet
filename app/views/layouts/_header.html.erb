@@ -10,9 +10,12 @@
       <%= link_to "Alphabet MN", root_path, class: "navbar-brand" %>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-left">
-        <li style="width: 500px;margin-top: 5px;"><%= react_component('SearchBar') %></li>
-      </ul>
+      <% unless current_page?(root_path) %>
+        <ul class="nav navbar-nav navbar-left">
+          <li style="width:350px;margin-top: 5px;"><%= react_component('SearchBar') %></li>
+        </ul>
+      <% end %>
+
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
