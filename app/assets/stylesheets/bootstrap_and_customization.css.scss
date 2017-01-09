@@ -19,3 +19,11 @@ $jumbotron-bg:                     white;
 .navbar-brand {
      font-weight: bold;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 30px;
+    background-color: white;
+}
