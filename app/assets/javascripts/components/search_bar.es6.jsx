@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     this.setState({value: event.target.value});
   }
   handleSubmit(event) {
-    window.location.href = "http://www.alphabet.mn/search/" + this.state.value
+    window.location.href = window.location.origin + "/search/" + this.state.value
   }
   render () {
     return (
