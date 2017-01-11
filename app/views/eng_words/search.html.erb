@@ -1,5 +1,16 @@
 <div class="jumbotron">
   <% if @eng_words.count != 0 %>
-    <%= @eng_words.first.word %>
+    <% @eng_words.first.eng_word_translations.each do |translation| %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <%= @eng_words.first.word %>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= translation.definition %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
