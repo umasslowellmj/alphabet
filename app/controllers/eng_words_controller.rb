@@ -1,8 +1,30 @@
+module MerriamWebsterAPI
+  MERRIAM_WEBSTER_KEY = ENV["MERRIAM_WEBSTER_KEY"]
+  BASE_URL = "http://www.dictionaryapi.com/"
+  def self.get_data(word)
+    conn = Faraday.new(:url => BASE_URL) do |faraday|
+      faraday.request  :url_encoded             # form-encode POST params
+      faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+      faraday.response :xml,  :content_type => /\bxml$/
+    end
+    xml_response = conn.get 'api/v1/references/collegiate/xml/' + word, {:key => MERRIAM_WEBSTER_KEY}
+    definition = xml_response.body["entry_list"]["entry"][0]
+    eng_word = {
+      "word": definition["ew"],
+      "pronunciation": definition["pr"],
+      "wav_url": "http://media.merriam-webster.com/soundc11/" + definition["sound"]["wav"][0] + "/" + definition["sound"]["wav"],
+      "type": definition["fl"],
+      "def": definition["def"]["dt"].kind_of?(Array) ? definition["def"]["dt"][0]["__content__"] : definition["def"]["dt"]["__content__"]
+    }
+  end
+end
+
 class EngWordsController < ApplicationController
   before_action :set_eng_word, only: [:show, :edit, :update, :destroy]
 
   def search
     @eng_words = EngWord.where(:word => params[:word])
+    @merriam_webster = MerriamWebsterAPI.get_data(params[:word])
     respond_to do |format|
       format.html { render :search }
     end
