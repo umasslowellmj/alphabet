@@ -1,19 +1,5 @@
 <div class="jumbotron">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        <%= @merriam_webster[:word] %>
-        <%= @merriam_webster[:pronunciation] %>
-        <a href="<%= @merriam_webster[:wav_url] %>">
-           <i class="fa fa-volume-up" aria-hidden="true"></i>
-        </a>
-      </h3>
-    </div>
-    <div class="panel-body">
-      <%= @merriam_webster[:type] %> <br>
-      <%= @merriam_webster[:def] %>
-    </div>
-  </div>
+  <%= react_component('WordBox', @merriam_webster) %>
   <% if @eng_words.count != 0 %>
     <% @eng_words.first.eng_word_translations.each do |translation| %>
       <div class="panel panel-primary">
