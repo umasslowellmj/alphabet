@@ -13,4 +13,18 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require 'masonry/transitions'
  */
+
+ #words {
+   margin: 0 auto;
+ }
+
+ .box {
+   margin: 5px;
+   width: 214px;
+ }
+
+ .box img {
+   width: 100%;
+ }

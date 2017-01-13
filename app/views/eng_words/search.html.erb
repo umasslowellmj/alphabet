@@ -1,7 +1,10 @@
-<div class="jumbotron">
-  <%= react_component('WordBox', @merriam_webster) %>
+<div id="words">
+  <div class="box">
+    <%= react_component('WordBox', @merriam_webster) %>
+  </div>
   <% if @eng_words.count != 0 %>
     <% @eng_words.first.eng_word_translations.each do |translation| %>
+    <div class="box">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -14,6 +17,7 @@
           <%= translation.sentence_translation %>
         </div>
       </div>
+    </div>
     <% end %>
   <% end %>
 </div>

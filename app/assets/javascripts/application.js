@@ -17,4 +17,6 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require masonry/jquery.masonry
+//= require masonry/jquery.imagesloaded.min
 //= require_tree .
